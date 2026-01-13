@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Study Help</title>
+  <meta name="description" content="AI-powered study help: explanations, practice, and tutoring support." />
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; background: #0f172a; color: #e5e7eb; }
+    header { padding: 64px 24px; background: linear-gradient(135deg, #22d3ee, #6366f1); color: #020617; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    h1 { font-size: 3rem; margin-bottom: 12px; }
+    p.lead { font-size: 1.25rem; }
+    main { padding: 48px 24px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+    .card { background: #020617; border: 1px solid #1f2937; border-radius: 16px; padding: 24px; }
+    .card h3 { margin-top: 0; }
+    .cta { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { background: #22d3ee; color: #020617; border: none; border-radius: 999px; padding: 12px 18px; font-weight: 600; cursor: pointer; text-decoration: none; }
+    .btn.secondary { background: transparent; color: #e5e7eb; border: 1px solid #22d3ee; }
+    footer { padding: 32px 24px; border-top: 1px solid #1f2937; color: #9ca3af; }
+    .notice { font-size: 0.9rem; color: #9ca3af; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>AI Study Help</h1>
+      <p class="lead">Understand your homework — explanations, examples, and practice. Built for learning, not cheating.</p>
+      <div class="cta">
+        <a class="btn" href="#get-started">Get Started</a>
+        <a class="btn secondary" href="#ethics">How it works</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="grid">
+      <div class="card">
+        <h3>Step-by-step explanations</h3>
+        <p>Clear breakdowns of concepts so you can learn how to solve problems yourself.</p>
+      </div>
+      <div class="card">
+        <h3>Practice & examples</h3>
+        <p>Similar problems with guided solutions to build confidence.</p>
+      </div>
+      <div class="card">
+        <h3>Multiple subjects</h3>
+        <p>Math, science, writing help, and study tips.</p>
+      </div>
+    </section>
+
+    <section id="get-started" class="card" style="margin-top: 32px;">
+      <h3>Get started</h3>
+      <p>Paste a question and ask for an explanation or example. (AI integration coming soon.)</p>
+      <form onsubmit="event.preventDefault(); alert('Demo only. Connect an AI API to enable answers.');">
+        <textarea rows="4" style="width:100%; border-radius:12px; padding:12px; background:#020617; color:#e5e7eb; border:1px solid #1f2937;" placeholder="Ask for an explanation…"></textarea>
+        <div style="margin-top:12px;"><button class="btn">Explain</button></div>
+      </form>
+    </section>
+
+    <section id="ethics" class="card" style="margin-top: 32px;">
+      <h3>Academic integrity</h3>
+      <p class="notice">This site is for tutoring and learning support. It does not submit answers for graded assignments or bypass school rules.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 AI Study Help</div>
+  </footer>
+</body>
+</html>
