@@ -53,11 +53,15 @@
     <section id="get-started" class="card" style="margin-top: 32px;">
       <h3>Get started</h3>
       <p>Paste a question and ask for an explanation or example. (AI integration coming soon.)</p>
-      <form onsubmit="event.preventDefault(); alert('Demo only. Connect an AI API to enable answers.');">
-        <textarea rows="4" style="width:100%; border-radius:12px; padding:12px; background:#020617; color:#e5e7eb; border:1px solid #1f2937;" placeholder="Ask for an explanation…"></textarea>
-        <div style="margin-top:12px;"><button class="btn">Explain</button></div>
-      </form>
-    </section>
+      <form onsubmit="event.preventDefault(); sendMessage();">
+  <textarea id="question" rows="4" style="width:100%;"></textarea>
+
+  <div style="margin-top:12px;">
+    <button class="btn" type="submit">Ask</button>
+  </div>
+</form>
+
+<p id="answer"></p>    </section>
 
     <section id="ethics" class="card" style="margin-top: 32px;">
       <h3>Academic integrity</h3>
@@ -68,5 +72,19 @@
   <footer>
     <div class="container">© 2026 AI Study Help</div>
   </footer>
+<script>
+async function sendMessage() {
+  const input = document.getElementById("question").value;
+
+  const res = await fetch("/.netlify/functions/chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message: input })
+  });
+
+  const data = await res.json();
+  document.getElementById("answer").innerText = data.reply || JSON.stringify(data);
+}
+</script>
 </body>
 </html>
